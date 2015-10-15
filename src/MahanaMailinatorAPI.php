@@ -9,6 +9,8 @@ namespace jrmadsen67\MahanaMailinatorAPI;
 *
 * For use with https://mailinator.com/apidocs.jsp
 *
+* Based on fork from https://github.com/thepieterdc/mailinator_php
+*
 * @author Jeff Madsen
 * @url http://codebyjeff.com
 * 
@@ -77,13 +79,13 @@ class MahanaMailinatorAPI{
         return http_build_query(array_merge($params, $additionalParams),'', '&');
     }
 
-     /**
-     * Get entire inbox. Inbox can include "@mailinator" or not
-     *
-     * @param string $inbox
-     *
-     * @return array
-     */
+    /**
+    * Get entire inbox. Inbox can include "@mailinator" or not
+    *
+    * @param string $inbox
+    *
+    * @return array
+    */
     public function fetchInbox($inbox)
     {
         $query = $this->call('inbox', ['to' => $inbox]);
@@ -98,6 +100,13 @@ class MahanaMailinatorAPI{
         return $query["messages"];
     }
 
+    /**
+    * Get a single message by its internal id (which you can only get via fetchInbox)
+    *
+    * @param integer $msgId
+    *
+    * @return array $query["data"]
+    */
     public function fetchMail($msgId)
     {
         $query = $this->call('email', array('id' => $msgId));
@@ -110,6 +119,13 @@ class MahanaMailinatorAPI{
         return $query["data"];
     }
 
+    /**
+    * Delete a single message by its internal id (which you can only get via fetchInbox)
+    *
+    * @param integer $msgId
+    *
+    * @return string $query["data"]
+    */
     public function deleteMail($msgId)
     {
         $query = $this->call('delete', array('id' => $msgId));
