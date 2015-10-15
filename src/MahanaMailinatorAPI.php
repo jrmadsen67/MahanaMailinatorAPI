@@ -7,7 +7,7 @@ namespace jrmadsen67\MahanaMailinatorAPI;
 *
 * @description Php Mailinator API library
 *
-* Based on fork of https://github.com/thepieterdc/mailinator_php
+* For use with https://mailinator.com/apidocs.jsp
 *
 * @author Jeff Madsen
 * @url http://codebyjeff.com
@@ -25,14 +25,14 @@ class MahanaMailinatorAPI{
     
     private $inboxCount = 0;
 
-    public function __construct($token = null, $private_domain = null)
+    public function __construct($token = null, $private_domain = false)
     {
         if (empty($token))
         {
             throw new \Exception('Please set your Mailinator API Token.');
         }  
 
-        if (!empty($private_domain))
+        if ($private_domain)
         {
             $this->private_domain = $private_domain;
         }  
