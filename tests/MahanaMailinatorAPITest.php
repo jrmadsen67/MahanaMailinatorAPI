@@ -16,10 +16,6 @@ class MahanaMailinatorAPITest extends \PHPUnit_Framework_TestCase
 
     private $private_domain = null;
 
-    public function testWorks()
-    {
-        $this->assertTrue(true);
-    }
 
     /**
     * @expectedException Exception
