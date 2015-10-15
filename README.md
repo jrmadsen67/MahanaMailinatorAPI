@@ -15,11 +15,13 @@ You need to have the [cURL](http://php.net/manual/en/book.curl.php)-extension in
 
 ## Usage
 $token = 'whateveryourtokenisfromabove';
+
 $mahanaMailinator = new jrmadsen67\MahanaMailinatorAPI\MahanaMailinatorAPI($token);
 
 //Get messages in inbox//
 
 $inbox = 'myinbox';
+
 $messages = $mahanaMailinator->fetchInbox($inbox);
 
 //Get a message//
