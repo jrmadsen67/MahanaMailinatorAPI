@@ -8,7 +8,7 @@ Php Mailinator API library
 Create a [Mailinator](http://www.mailinator.com) account, login, and find your token at [https://www.mailinator.com/settings.jsp](https://www.mailinator.com/settings.jsp)
 
 ## Requirements
-You need to have the [cURL](http://php.net/manual/en/book.curl.php)-extension installed on your server. [PHP](http://www.php.net) 5.2 will suffice.
+You need to have the [cURL](http://php.net/manual/en/book.curl.php)-extension installed on your server. [PHP](http://www.php.net) 5.4 will suffice.
 
 ## Installation
 `composer require jrmadsen67/mahana-mailinator-api`
