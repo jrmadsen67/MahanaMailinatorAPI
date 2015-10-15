@@ -14,6 +14,7 @@ You need to have the [cURL](http://php.net/manual/en/book.curl.php)-extension in
 `composer require jrmadsen67/mahana-mailinator-api`
 
 ## Usage
+```php
 $token = 'whateveryourtokenisfromabove';
 
 $mahanaMailinator = new jrmadsen67\MahanaMailinatorAPI\MahanaMailinatorAPI($token);
@@ -31,3 +32,4 @@ $message = $mahanaMailinator->fetchMail($msgId);
 //Delete a message//
 
 $status = $mahanaMailinator->deleteMail($msgId);
+```
